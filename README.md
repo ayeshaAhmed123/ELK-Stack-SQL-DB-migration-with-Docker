@@ -35,6 +35,8 @@ chmod 755 es01.key es01.crt rootCA.pem rootCA.key kib01.key kib01.crt
 cd ..
 ```
 **### 4 Give jar File of JDBC the permission (Used for input task of logstash pipeline to migrate data)**
+Jar file ws downloaded from this  :curl -k -o logstash/jars/mssql-jdbc-9.2.1.jre8.jar https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/9.2.1.jre8/mssql-jdbc-9.2.1.jre8.jar
+
 ```bash
 chmod 755 logstash/jars/mssql-jdbc-9.2.1.jre8.jar
 ```
