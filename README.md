@@ -25,22 +25,31 @@ cd ELK-Stack-SQL-DB-migration-with-Docker
 cd certls
 chmod +x script.sh
 ./script.sh
-
+```
 **### 3. change file permissions**
+```bash
 chmod 755 es01.key es01.crt rootCA.pem rootCA.key kib01.key kib01.crt
 cd ..
-
+```
 **### 4 Give jar File of JDBC the permission (Used for input task of logstash pipeline to migrate data)**
-
+```bash
 chmod 755 logstash/jars/mssql-jdbc-9.2.1.jre8.jar
-
+```
 **### 5. Docker Setup**
+```bash
 docker compose up -d
+```
 **### 6. Get Service Token For Kibana And Restart kibana**
+```bash
 docker exec -it elasticsearch bin/elasticsearch-service-tokens create elastic/kibana kibana-system
-sudo nano kibana.yml    (enter service token in the elasticsearch.serviceAccountToken)
+sudo nano kibana.yml
+```
+Get service token and replace it kibana.yml with elasticsearch.serviceAccountToken: <token-value>
+```bash
 docker restart kibana
+```
 **### 7. Initilize DB wiuth this by connecting through SSMS**
+```bash
 -- Step 1: Create the database
 CREATE DATABASE logdb;
 Use logdb;
@@ -81,7 +90,9 @@ INSERT INTO patients (first_name, last_name, age, gender, admission_date) VALUES
 ('Elijah', 'Jackson', 52, 'Male', '2025-04-07');
 
 Select * from patients;
-
+```
 
 **### 8. Restart logstash**
+```bash
 docker restart logstash
+```
