@@ -21,7 +21,10 @@ git clone https://github.com/ayeshaAhmed123/ELK-Stack-SQL-DB-migration-with-Dock
 cd ELK-Stack-SQL-DB-migration-with-Docker
 ```
 **### 2. Make Certs**
+Before making cert update script.sh   with your ip 
+
 ```bash
+sudo nano script.sh
 cd certls
 chmod +x script.sh
 ./script.sh
