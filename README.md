@@ -19,6 +19,7 @@ This project sets up the ELK (Elasticsearch, Logstash, Kibana) stack with integr
 ```bash
 git clone https://github.com/ayeshaAhmed123/ELK-Stack-SQL-DB-migration-with-Docker.git
 cd ELK-Stack-SQL-DB-migration-with-Docker
+```
 **### 2. Make Certs**
 ```bash
 cd certls
